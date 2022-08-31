@@ -91,7 +91,6 @@ def main():
     bot = telebot.TeleBot(telegram_token)
     send_message(bot, 'Начинаем отслеживание...')
 
-    counter = 0
     while True:
         try:
             mmb_changed = False
@@ -99,7 +98,7 @@ def main():
             current_mmb = get_last_mmb(response_text)
             mmb_changed = (current_mmb != old_mmb)
             old_mmb = current_mmb
-            print(f'очередная итерация... {counter}')
+            print('очередная итерация...')
 
             if mmb_changed:
                 send_message(bot, 'БЕГОМ ПРОВЕРЯТЬ!!!')
@@ -111,7 +110,6 @@ def main():
         except Exception as error:
             err_msg_to_log(error)
         finally:
-            counter += 1
             sleep(10)
 
 
