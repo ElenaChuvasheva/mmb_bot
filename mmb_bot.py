@@ -12,7 +12,7 @@ from dotenv import load_dotenv
 from exceptions import (GetException, ParseException, UnavailableException,
                         err_msg)
 
-url = 'https://mmb.progressor.ru/'
+url = 'http://mmb.progressor.ru/'
 
 load_dotenv()
 telegram_token = os.getenv('telegram_token')
