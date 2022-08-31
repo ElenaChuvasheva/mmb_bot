@@ -1,1 +1,1 @@
-web: python mmb_bot.py
+web: python mmb_bot.py ${PORT}
