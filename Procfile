@@ -1,1 +1,1 @@
-web: python mmb_bot.py
+worker: python mmb_bot.py
