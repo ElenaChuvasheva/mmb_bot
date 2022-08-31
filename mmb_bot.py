@@ -1,3 +1,4 @@
+import datetime
 import logging
 import os
 import sys
@@ -12,11 +13,16 @@ from dotenv import load_dotenv
 from exceptions import (GetException, ParseException, UnavailableException,
                         err_msg)
 
-url = 'http://mmb.progressor.ru/'
+url = 'https://mmb.progressor.ru/'
+# url = 'http://127.0.0.1:8000/'
 
 load_dotenv()
 telegram_token = os.getenv('telegram_token')
 channel_name = os.getenv('channel_name')
+# это костыль, потом надо будет убрать:
+log_channel_name = os.getenv('log_channel_name')
+
+bot = telebot.TeleBot(telegram_token)
 
 
 def check_tokens():
@@ -34,12 +40,14 @@ logging.basicConfig(
 def err_msg_to_log(error):
     """Отправка сообщения об ошибке в лог."""
     logging.error(err_msg(error))
+    bot.send_message(log_channel_name, err_msg(error))
 
 
 def send_message(bot, message):
     """Отправка сообщения в чат."""
     bot.send_message(channel_name, message)
     logging.info(f'Бот отправил сообщение \"{message}\"')
+    bot.send_message(log_channel_name, message)
 
 
 def get_site_answer():
@@ -87,7 +95,6 @@ def main():
         logging.critical(f'Не могу начать отслеживание: {error}')
         sys.exit(error)
 
-    bot = telebot.TeleBot(telegram_token)
     send_message(bot, 'Начинаем отслеживание...')
 
     while True:
@@ -98,6 +105,8 @@ def main():
             mmb_changed = (current_mmb != old_mmb)
             old_mmb = current_mmb
             print('очередная итерация...')
+            if ((datetime.datetime.now().minute) % 10 and datetime.datetime.now().second <= 20):
+                bot.send_message(log_channel_name, str(current_mmb))
 
             if mmb_changed:
                 send_message(bot, 'БЕГОМ ПРОВЕРЯТЬ!!!')
