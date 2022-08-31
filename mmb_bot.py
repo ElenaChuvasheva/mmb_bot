@@ -105,7 +105,7 @@ def main():
             mmb_changed = (current_mmb != old_mmb)
             old_mmb = current_mmb
             print('очередная итерация...')
-            if ((datetime.datetime.now().minute) % 10 == 0 and datetime.datetime.now().second <= 20):
+            if ((datetime.datetime.now().minute) % 10 == 0 and datetime.datetime.now().second <= 15):
                 bot.send_message(log_channel_name, str(current_mmb))
 
             if mmb_changed:
