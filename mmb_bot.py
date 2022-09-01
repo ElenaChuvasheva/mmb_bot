@@ -95,7 +95,7 @@ def main():
         logging.critical(f'Не могу начать отслеживание: {error}')
         sys.exit(error)
 
-    send_message(bot, 'Начинаем отслеживание...')
+    # send_message(bot, 'Начинаем отслеживание...')
 
     while True:
         try:
