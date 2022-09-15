@@ -97,6 +97,8 @@ def main():
 
     # send_message(bot, 'Начинаем отслеживание...')
 
+    print_time = False
+    printed_already = False
     while True:
         try:
             mmb_changed = False
@@ -105,11 +107,15 @@ def main():
             mmb_changed = (current_mmb != old_mmb)
             old_mmb = current_mmb
             print('очередная итерация...')
-            if ((datetime.datetime.now().minute) % 10 == 0 and datetime.datetime.now().second <= 15):
+            print_time = ((datetime.datetime.now().minute) % 10 == 0)
+            # if ((datetime.datetime.now().minute) % 10 == 0 and datetime.datetime.now().second <= 15):
+            if print_time and not printed_already:
                 bot.send_message(log_channel_name, str(current_mmb))
-
+                printed_already = True
             if mmb_changed:
                 send_message(bot, 'БЕГОМ ПРОВЕРЯТЬ!!!')
+            if printed_already and (not print_time):
+                printed_already = False
 
         except GetException as error:
             err_msg_to_log('Не могу получить ответ сайта: ' + str(error))
