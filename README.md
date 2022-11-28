@@ -3,4 +3,4 @@
 Бот отслеживает сайт соревнований по ориентированию и сообщает в телеграм, когда начинается регистрация.
 
 ## Стек технологий
-Python, telebot, Telegram Bot API, dotenv, beautifulsoup
+Python, Telegram Bot API, dotenv, beautifulsoup
