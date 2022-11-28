@@ -6,6 +6,7 @@
 Python 3, Telegram Bot API, dotenv, beautifulsoup
 
 ## Развёртывание
+Используется Pythin 3.7.9.
 Клонируйте репозиторий и перейдите в него в командной строке:
 ```
 git clone <адрес репозитория>
@@ -13,22 +14,21 @@ git clone <адрес репозитория>
 ```
 cd api_yamdb/
 ```
-
-Cоздать и активировать виртуальное окружение:
+Cоздайте и активируйте виртуальное окружение:
 ```
 python -m venv env
 ```
 ```
 source env/bin/activate
 ```
-Установить зависимости из файла requirements.txt:
+Установите зависимости из файла requirements.txt:
 ```
 python -m pip install --upgrade pip
 ```
 ```
 pip install -r requirements.txt
 ```
-Запустить скрипт:
+Запустите скрипт:
 ```
 python mmb_bot.py
 ```
