@@ -3,7 +3,7 @@
 Бот отслеживает сайт соревнований по ориентированию и сообщает в телеграм, когда начинается регистрация.
 
 ## Технологии
-Python 3, Telegram Bot API, dotenv, beautifulsoup
+Python 3, Telegram Bot API, dotenv, Beautiful Soup
 
 ## Развёртывание
 Используется Python 3.7.9.
