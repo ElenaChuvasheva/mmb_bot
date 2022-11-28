@@ -14,7 +14,7 @@ Python 3, Telegram Bot API, dotenv, beautifulsoup
 git clone <адрес репозитория>
 ```
 ```
-cd api_yamdb/
+cd mmb_bot/
 ```
 Cоздайте и активируйте виртуальное окружение:
 ```
@@ -24,9 +24,6 @@ python -m venv env
 source env/bin/activate
 ```
 Установите зависимости из файла requirements.txt:
-```
-python -m pip install --upgrade pip
-```
 ```
 pip install -r requirements.txt
 ```
