@@ -7,7 +7,6 @@ Python, Telegram Bot API, dotenv, beautifulsoup
 
 ## Развёртывание
 Клонируйте репозиторий и перейдите в него в командной строке:
-
 ```
 git clone <адрес репозитория>
 ```
@@ -28,4 +27,8 @@ python -m pip install --upgrade pip
 ```
 ```
 pip install -r requirements.txt
+```
+Запустить скрипт:
+```
+python mmb_bot.py
 ```
