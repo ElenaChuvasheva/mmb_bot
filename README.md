@@ -29,7 +29,7 @@ pip install -r requirements.txt
 ```
 Создайте в папке mmb_bot/ файл .env и задайте там переменные окружения:
 ```
-telegram_token = 'токен_вашего_канала'
+telegram_token = 'ваш_токен'
 channel_name = '@имя_канала'
 log_channel_name = '@имя_канала_для_логов'
 ```
