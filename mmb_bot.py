@@ -19,7 +19,6 @@ url = 'https://mmb.progressor.ru/'
 load_dotenv()
 telegram_token = os.getenv('telegram_token')
 channel_name = os.getenv('channel_name')
-# это костыль, потом надо будет убрать:
 log_channel_name = os.getenv('log_channel_name')
 
 bot = telebot.TeleBot(telegram_token)
@@ -95,7 +94,7 @@ def main():
         logging.critical(f'Не могу начать отслеживание: {error}')
         sys.exit(error)
 
-    # send_message(bot, 'Начинаем отслеживание...')
+    send_message(bot, 'Начинаем отслеживание...')
 
     print_time = False
     printed_already = False
